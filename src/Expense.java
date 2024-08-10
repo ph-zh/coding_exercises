@@ -21,9 +21,7 @@ public class Expense {
     public void setTransaction(Integer transaction) {
         this.transaction = transaction;
     }
-
-    //в конструкторе мы сгенерируем уникальный номер транзакции от 0 до 1 000 000
-    //с помощью функции Math.random();
+    
     public Expense(double value) {
         this.value = value;
         this.transaction = (int) (Math.random() * 1000000); //реализуйте создание уникального номера транзакции
