@@ -37,6 +37,7 @@ public class ExpensesManager {
     // Добавьте метод removeAllExpenses()
     // Текст для печати: "Список трат пуст."
     void removeAllExpenses() {
+        expenses.clear();
         System.out.println("Список трат пуст.");
     }
 
