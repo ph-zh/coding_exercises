@@ -20,7 +20,7 @@ public class ExpensesManager {
     void printAllExpenses() {
         for (int i = 0; i < expenses.size(); i++) {
             Expense exp = expenses.get(i);
-            System.out.println("Трата № " + (i + 1) + ". Потрачено " + exp.getValue() + " рублей, код транзакции: " + exp.getTransaction());
+            System.out.println("Трата № " + (i + 1) + ". Потрачено " + exp.getValue() + " рублей, код транзакции: "+exp.getTransaction());
         }
     }
 
@@ -34,28 +34,15 @@ public class ExpensesManager {
         return maxExpense;
     }
 
+    // Добавьте метод removeAllExpenses()
+    // Текст для печати: "Список трат пуст."
     void removeAllExpenses() {
-        expenses.clear();
         System.out.println("Список трат пуст.");
     }
 
-    void removeExpense(int transaction, int index) {
-        if (expenses.isEmpty()) {
-            System.out.println("Список трат пуст.");
-        } else {
-            if(index < expenses.size()) {
-                for(index = 0; index < expenses.size(); index++) {
-                    if (expenses.contains(expenses.get(transaction))) {
-                        expenses.remove(expenses.get(transaction));
-                        System.out.println("Трата удалена!");
-                        break;
-                    } else {
-                        System.out.println("Такой траты нет.");
-                    }
-                }
-            } else {
-                System.out.println("Такой траты нет.");
-            }
-        }
-    }
+            // Добавьте метод removeExpense(int transaction)
+            /* Текст для печати: "Список трат пуст."
+        "Трата удалена!"
+        "Такой траты нет." */
+
 }
