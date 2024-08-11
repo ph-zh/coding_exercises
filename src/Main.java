@@ -56,6 +56,7 @@ public class Main {
                 System.out.println("Введите транзакцию:");
                 int transaction = scanner.nextInt(); // Считайте значение транзакции
                 // Вызовите соответствующий метод
+                expensesManager.removeExpense(transaction);
             } else if (command == 0) {
                 System.out.println("Выход");
                 break;
