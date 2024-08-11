@@ -34,18 +34,12 @@ public class ExpensesManager {
         return maxExpense;
     }
 
-    // Добавьте метод removeAllExpenses()
-    // Текст для печати: "Список трат пуст."
     void removeAllExpenses() {
         expenses.clear();
         System.out.println("Список трат пуст.");
     }
-
-            // Добавьте метод removeExpense(int transaction)
-            /* Текст для печати: "Список трат пуст."
-        "Трата удалена!"
-        "Такой траты нет."
-        - метод removeExpense(int transaction) должен проверять, содержится ли указанное пользователем значение в списке.
+/*
+- метод removeExpense(int transaction) должен проверять, содержится ли указанное пользователем значение в списке.
 Если в списке нет ни одной траты, то нужно сообщить пользователю, что «Список трат пуст». Если трата найдена, то её нужно
 удалить и сообщить об этом. Если указанной суммы расходов в списке нет, то нужно вывести на экран, что «Такой траты нет».
 - В этом задании мы добавляем функцию поиска. Так как поиск по значению траты не будет точным (ведь могут существовать периодические
@@ -54,19 +48,24 @@ public class ExpensesManager {
 - Чтобы удалить элемент, вам потребуется вычислить его индекс — используйте для этого цикл и не забудьте его прервать. Найденный
 индекс сохраните в переменную index. Обратите внимание, несмотря на наличие метода remove для элемента, в этом задании мы
 предлагаем удалять первый найденный элемент по индексу.
-        */
+System.out.println("Трата удалена!");
+System.out.println("Такой траты нет.");
+System.out.println("Список трат пуст.");
+ */
     void removeExpense(int transaction) {
-        boolean isContains = expenses.contains(expenses.get(transaction));
-        if(expenses.isEmpty()) {
-            System.out.println("Список трат пуст.");
+        if (expenses.contains(expenses.get(transaction))) {
+            System.out.println("good");
         } else {
-            if(isContains) {
-                expenses.remove(expenses.get(transaction));
-                System.out.println("Трата удалена!");
-            } else {
-                System.out.println("Такой траты нет.");
-            }
+            System.out.println("Список трат пуст.");
         }
+//        for(int index = 0; index < expenses.size(); index ++) {
+//            if(index > expenses.size()) {
+//                expenses.remove(expenses.get(transaction));
+//                System.out.println("Трата удалена!");
+//            } else {
+//                System.out.println("Список трат пуст.");
+//            }
+//            break;
+//        }
     }
-
 }
