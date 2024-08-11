@@ -56,9 +56,17 @@ public class ExpensesManager {
 предлагаем удалять первый найденный элемент по индексу.
         */
     void removeExpense(int transaction) {
-        System.out.println("Список трат пуст.");
-        System.out.println("Трата удалена!");
-        System.out.println("Такой траты нет.");
+        boolean isContains = expenses.contains(transaction);
+        if(expenses.isEmpty()) {
+            System.out.println("Список трат пуст.");
+        } else {
+            if(isContains) {
+                expenses.remove(transaction);
+                System.out.println("Трата удалена!");
+            } else {
+                System.out.println("Такой траты нет.");
+            }
+        }
     }
 
 }
