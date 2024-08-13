@@ -4,7 +4,7 @@ public class ExpensesManager {
     ArrayList<Expense> expenses;
 
     ExpensesManager() {
-        expenses = new ArrayList<>(5);
+        expenses = new ArrayList<>();
     }
 
     double saveExpense(double moneyBeforeSalary, double expense) {
@@ -57,9 +57,9 @@ public class ExpensesManager {
         if (expenses.isEmpty()) {
             System.out.println("Список трат пуст.");
         } else {
-            for (int index = 0; index < expenses.size(); index ++) {
-                if (expenses.contains(1, expenses.get(transaction))) {
-                    System.out.println(expenses.get(index));
+            for (int i = 0; i < expenses.size(); i ++) {
+                if (transaction < expenses.size()) {
+                    expenses.remove(expenses.get(transaction));
                     System.out.println("Трата удалена!");
                 } else {
                     System.out.println("Такой траты нет");
