@@ -4,12 +4,13 @@
 все хранящиеся в ней группы, а также дописать реализацию цифрового меню. Для считывания из консоли пользуйтесь методом nextLine().
 В комментариях прекода оставлены фразы для печати и имена переменных.
  */
-
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ... // Объявите и проиницализируйте хеш-таблицу musicGroups
+        // Объявите и проиницализируйте хеш-таблицу musicGroups
+        HashMap<String, Integer> musicGroups = new HashMap<>();
         musicGroups.put("The Beatles", 1960);
         musicGroups.put("Rammstein", 1994);
         musicGroups.put("Queen", 1970);
@@ -26,8 +27,10 @@ public class Main {
         musicGroups.put("The Doors", 1965);
 
         System.out.println("Легендарные группы, год основания которых вы можете узнать:");
-        ... // Распечайте список групп
-        ... // System.out.println(group)
+        // Распечайте список групп
+        for(String group : musicGroups.keySet()) {
+            System.out.println(group);
+        }
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -37,23 +40,25 @@ public class Main {
             System.out.println("3 - Выйти из приложения");
             int command = Integer.parseInt(scanner.nextLine());
             if (command == 1) {
-                ... // "Введите название группы"
-                ... // keyGroup
-                ... // year
-               ... // "Год основания " + keyGroup
-                System.out.println(year);
-
+                // "Введите название группы"
+                // keyGroup
+                // year
+                // "Год основания " + keyGroup
+                // System.out.println(year);
+                System.out.println("Введите название группы");
+                
             } else if (command == 2) {
-                ... // "Добавьте свою любимую группу"
-                ... // "Введите её название"
-                ... // nameGroup
-                ... // "Введите год основания"
-                ... // bornYear
-                ...
-                System.out.println("Информация о группе " + nameGroup + " добавлена.");
+                // "Добавьте свою любимую группу"
+                // "Введите её название"
+                // nameGroup
+                // "Введите год основания"
+                // bornYear
+
+                System.out.println("Информация о группе " + 1 + " добавлена.");
 
             } else if (command == 3) {
-              ... // Остановите цикл
+              // Остановите цикл
+                break;
             } else {
                 System.out.println("Извините, такой команды пока нет.");
             }
