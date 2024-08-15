@@ -5,12 +5,15 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<String, String> officeTool = new HashMap<>();
-        officeTool.put("S234", "Большой степлер");
-        officeTool.put("P342", "Чёрно-белый принтер");
-        officeTool.put("N845", "Острые ножницы");
+        HashMap<String, String> countriesCapitals = new HashMap<>();
+        countriesCapitals.put("Франция", "Париж");
+        countriesCapitals.put("Аргентина", "Буэнос-Айрес");
+        countriesCapitals.put("Россия", "Москва");
+        countriesCapitals.put("Америка", "Вашингтон");
+        countriesCapitals.put("Япония", "Токио");
+        countriesCapitals.put("Норвегия", "Осло");
 
-        String tool = officeTool.get("N845");
-        System.out.println(tool); // Получили "Острые ножницы"
+        System.out.println("Столица Аргентины: " + countriesCapitals.get("Аргентина"));
+        System.out.println("Столица Норвегии: " + countriesCapitals.get("Норвегия"));
     }
 }
