@@ -46,7 +46,11 @@ public class Main {
                 // "Год основания " + keyGroup
                 // System.out.println(year);
                 System.out.println("Введите название группы");
-                
+                for (String keyGroup : musicGroups.keySet()) {
+                    System.out.println(keyGroup);
+                }
+
+
             } else if (command == 2) {
                 // "Добавьте свою любимую группу"
                 // "Введите её название"
@@ -54,7 +58,7 @@ public class Main {
                 // "Введите год основания"
                 // bornYear
 
-                System.out.println("Информация о группе " + 1 + " добавлена.");
+                System.out.println("Информация о группе " + 2 + " добавлена.");
 
             } else if (command == 3) {
               // Остановите цикл
