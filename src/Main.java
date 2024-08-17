@@ -47,11 +47,9 @@ public class Main {
                 // "Год основания " + keyGroup
                 System.out.println("Введите название группы");
                 String keyGroup = scanner.nextLine();
-                for(Integer year : musicGroups.values()) {
-                    if (year.equals(keyGroup));
-                    System.out.println("Год основания " + keyGroup);
-                    System.out.println(year);
-                }
+                System.out.println("Год основания " + keyGroup);
+                Integer year = musicGroups.get(keyGroup);
+                System.out.println(year);
 
             } else if (command == 2) {
                 // "Добавьте свою любимую группу"
@@ -63,7 +61,8 @@ public class Main {
                 System.out.println("Введите её название");
                 String nameGroup = scanner.nextLine();
                 System.out.println("Введите год основания");
-                Integer bornYear = scanner.nextInt();
+                int bornYear = Integer.parseInt(scanner.nextLine());
+                musicGroups.put(nameGroup, bornYear);
                 System.out.println("Информация о группе " + nameGroup + " добавлена.");
 
             } else if (command == 3) {
