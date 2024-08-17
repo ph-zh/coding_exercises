@@ -12,7 +12,6 @@
 4/ Метод removeUnprofitableOrders должен удалять из таблицы клиентов, сумма заказов которых строго меньше 5000.
  */
 
-
 public class Main {
     public static void main(String[] args) {
         OrdersManager ordersManager = new OrdersManager();

@@ -35,7 +35,7 @@ public class OrdersManager {
     }
 
     void printAllOrders() {
-        for (String name : ...){ // Цикл должен пройтись по ключам
+        for (String name : customersOrders.keySet()){ // Цикл должен пройтись по ключам
             System.out.println("Заказы " + name + ":");
             ArrayList<Double> value = customersOrders.get(name);
             System.out.println(value);
@@ -44,7 +44,7 @@ public class OrdersManager {
 
     double getOrdersSum() {
         double sum = 0;
-        for (ArrayList<Double> orders : ...){ // Здесь должен быть обход по значениям
+        for (ArrayList<Double> orders : customersOrders.values()){ // Здесь должен быть обход по значениям
             for (double orderPrice : orders) {
                 sum += orderPrice;
             }
@@ -53,23 +53,32 @@ public class OrdersManager {
     }
 
     void printCustomerOrders(String customerName) {
-        if (...){ // Проверьте, есть ли указанный ключ в таблице
+        if (customersOrders.containsKey(customerName)){ // Проверьте, есть ли указанный ключ в таблице
             System.out.println("Заказы " + customerName + ":");
             System.out.println(customersOrders.get(customerName));
         }
     }
-
+/*
+3/ Метод getMaxOrderCustomerName() должен возвращать имя клиента, который потратил в зоомагазине больше всего.
+Переменные для хранения имени клиента и максимальной суммы заказов мы объявили и инициализировали за вас.
+Числовое переменной присвоили 0, а строковой — пустую строку "". Вам нужно дописать логику работы метода.
+Вы уже не раз искали максимум в массивах или списках. Здесь получится очень похоже!
+ */
     String getMaxOrderCustomerName() {
         double maxOrder = 0;
         String customerName = "";
 
-        ... // Допишите логику работы метода
+        // Допишите логику работы метода
+        for (ArrayList<Double> order : customersOrders.values()) {
+            System.out.println(order);
+        }
+
 
         return customerName;
     }
 
     void removeUnprofitableOrders() {
-        ArrayList<String> names ... // Создайте список клиентов с заказами меньше 5000
+        ArrayList<String> names = new ArrayList<>(); // Создайте список клиентов с заказами меньше 5000
 
         // Наполните список names
         for ...
