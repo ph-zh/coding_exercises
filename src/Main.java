@@ -41,23 +41,34 @@ public class Main {
             System.out.println("3 - Выйти из приложения");
             int command = Integer.parseInt(scanner.nextLine());
             if (command == 1) {
-                ... // "Введите название группы"
-                ... // keyGroup
-                ... // year
-               ... // "Год основания " + keyGroup
-                System.out.println(year);
+                // "Введите название группы"
+                // keyGroup
+                // year
+                // "Год основания " + keyGroup
+                System.out.println("Введите название группы");
+                String keyGroup = scanner.nextLine();
+                for(Integer year : musicGroups.values()) {
+                    if (year.equals(keyGroup));
+                    System.out.println("Год основания " + keyGroup);
+                    System.out.println(year);
+                }
 
             } else if (command == 2) {
-                ... // "Добавьте свою любимую группу"
-                ... // "Введите её название"
-                ... // nameGroup
-                ... // "Введите год основания"
-                ... // bornYear
-                ...
+                // "Добавьте свою любимую группу"
+                // "Введите её название"
+                // nameGroup
+                // "Введите год основания"
+                // bornYear
+                System.out.println("Добавьте свою любимую группу");
+                System.out.println("Введите её название");
+                String nameGroup = scanner.nextLine();
+                System.out.println("Введите год основания");
+                Integer bornYear = scanner.nextInt();
                 System.out.println("Информация о группе " + nameGroup + " добавлена.");
 
             } else if (command == 3) {
-              ... // Остановите цикл
+              // Остановите цикл
+                break;
             } else {
                 System.out.println("Извините, такой команды пока нет.");
             }
