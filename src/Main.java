@@ -28,6 +28,7 @@ public class Main {
 
         System.out.println("Легендарные группы, год основания которых вы можете узнать:");
         // Распечайте список групп
+        // System.out.println(group)
         for(String group : musicGroups.keySet()) {
             System.out.println(group);
         }
@@ -40,29 +41,23 @@ public class Main {
             System.out.println("3 - Выйти из приложения");
             int command = Integer.parseInt(scanner.nextLine());
             if (command == 1) {
-                // "Введите название группы"
-                // keyGroup
-                // year
-                // "Год основания " + keyGroup
-                // System.out.println(year);
-                System.out.println("Введите название группы");
-                for (String keyGroup : musicGroups.keySet()) {
-                    System.out.println(keyGroup);
-                }
-
+                ... // "Введите название группы"
+                ... // keyGroup
+                ... // year
+               ... // "Год основания " + keyGroup
+                System.out.println(year);
 
             } else if (command == 2) {
-                // "Добавьте свою любимую группу"
-                // "Введите её название"
-                // nameGroup
-                // "Введите год основания"
-                // bornYear
-
-                System.out.println("Информация о группе " + 2 + " добавлена.");
+                ... // "Добавьте свою любимую группу"
+                ... // "Введите её название"
+                ... // nameGroup
+                ... // "Введите год основания"
+                ... // bornYear
+                ...
+                System.out.println("Информация о группе " + nameGroup + " добавлена.");
 
             } else if (command == 3) {
-              // Остановите цикл
-                break;
+              ... // Остановите цикл
             } else {
                 System.out.println("Извините, такой команды пока нет.");
             }
