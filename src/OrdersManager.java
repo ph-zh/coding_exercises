@@ -53,7 +53,7 @@ public class OrdersManager {
     }
 
     void printCustomerOrders(String customerName) {
-        if (...) { // Проверьте, есть ли указанный ключ в таблице
+        if (customersOrders.containsKey(customerName)) { // Проверьте, есть ли указанный ключ в таблице
             System.out.println("Заказы " + customerName + ":");
             System.out.println(customersOrders.get(customerName));
         }
