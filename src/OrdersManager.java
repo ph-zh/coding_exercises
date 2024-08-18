@@ -44,7 +44,7 @@ public class OrdersManager {
 
     double getOrdersSum() {
         double sum = 0;
-        for (ArrayList<Double> orders : ...) { // Здесь должен быть обход по значениям
+        for (ArrayList<Double> orders : customersOrders.values()) { // Здесь должен быть обход по значениям
             for (double orderPrice : orders) {
                 sum += orderPrice;
             }
