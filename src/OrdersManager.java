@@ -35,7 +35,7 @@ public class OrdersManager {
     }
 
     void printAllOrders() {
-        for (String name : ...) { // Цикл должен пройтись по ключам
+        for (String name : customersOrders.keySet()) { // Цикл должен пройтись по ключам
             System.out.println("Заказы " + name + ":");
             ArrayList<Double> value = customersOrders.get(name);
             System.out.println(value);
