@@ -1,19 +1,15 @@
 /*
 
  */
-import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Random random = new Random();
-        System.out.println("Результат умножения = " + multiply(random));
+        Scanner scanner = new Scanner(System.in);
+        int action = scanner.nextInt();
+        while (action != 0) {
+            System.out.println(action);
+            action = scanner.nextInt();
     }
-
-    static int multiply(Random random) {
-        int argument = random.nextInt(100);
-        System.out.println("Первый аргумент = " + argument);
-        argument = random.nextInt(100);
-        System.out.println("Второй аргумент = " + argument);
-        return argument * argument;
-    }
+  }
 }
