@@ -13,18 +13,21 @@ public class Main {
 class CoffeeMachine {
 
     public void makeCoffee(String coffeeType) {
-        if (coffeeType.equals("Капучино")) {
-            makeEspresso();
-            addMilk();
-        } else if (coffeeType.equals("Американо")) {
-            makeEspresso();
-            addWater();
-        } else if (coffeeType.equals("Эспрессо")) {
-            makeEspresso();
-        } else {
-            System.out.println("Такой тип кофе я не готовлю!");
+        switch (coffeeType) {
+            case "Капучино":
+                makeEspresso();
+                addMilk();
+                break;
+            case "Американо":
+                makeEspresso();
+                addWater();
+                break;
+            case "Эспрессо":
+                makeEspresso();
+                break;
+            default:
+                System.out.println("Такой тип кофе я не готовлю!");
         }
-
     }
 
     private void makeEspresso() {
