@@ -5,40 +5,20 @@
 public class Main {
 
     public static void main(String[] args) {
-        CoffeeMachine coffeeMachine = new CoffeeMachine();
-        coffeeMachine.makeCoffee("Капучино");
-    }
-}
+        String language = "Java";
 
-class CoffeeMachine {
-
-    public void makeCoffee(String coffeeType) {
-        switch (coffeeType) {
-            case "Капучино":
-                makeEspresso();
-                addMilk();
+        switch (language) {
+            case "Java":
+                System.out.println("Java — это язык для всего.");
                 break;
-            case "Американо":
-                makeEspresso();
-                addWater();
+            case "Python":
+                System.out.println("На Python часто обрабатывают данные и разрабатывают нейронные сети.");
                 break;
-            case "Эспрессо":
-                makeEspresso();
+            case "JavaScript":
+                System.out.println("JavaScript - отличный выбор для веб-разработки");
                 break;
             default:
-                System.out.println("Такой тип кофе я не готовлю!");
+                System.out.println("Про язык программирования " + language + " мы ничего не знаем.");
         }
-    }
-
-    private void makeEspresso() {
-        System.out.println("Приготовлено эспрессо.");
-    }
-
-    private void addMilk() {
-        System.out.println("Добавлено молоко.");
-    }
-
-    private void addWater() {
-        System.out.println("Добавлена вода.");
     }
 }
