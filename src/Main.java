@@ -1,13 +1,10 @@
 /*
 
  */
-import java.util.HashMap;
+import com.offer.special;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<String, String> capitals = new HashMap<>();
-        capitals.put("Россия", "Москва");
-        capitals.put("Италия", "Рим");
-        System.out.println("Столица России - " + capitals.get("Россия"));
+        System.out.println("Первый проект!");
     }
 }
