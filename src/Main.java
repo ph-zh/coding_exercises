@@ -8,6 +8,6 @@ public class Main {
         HashMap<String, String> capitals = new HashMap<>();
         capitals.put("Россия", "Москва");
         capitals.put("Италия", "Рим");
-        System.out.println("Столица России - " + capitals.get("Россия"));
+        System.out.println("Столица России - " + capitals.get("Италия"));
     }
 }
