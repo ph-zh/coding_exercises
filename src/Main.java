@@ -1,13 +1,24 @@
 /*
-
+Исправьте ошибку доступа в классе Practicum.
  */
-import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<String, String> capitals = new HashMap<>();
-        capitals.put("Россия", "Москва");
-        capitals.put("Италия", "Рим");
-        System.out.println("Столица России - " + capitals.get("Италия"));
+        Product product = new Product("Пирожок", 35.0);
+        System.out.println("Стоимость продукта - " + product.getPrice() + " руб.");
+    }
+}
+
+class Product {
+    private String name;
+    private double price;
+
+    public Product(String nameProduct, double priceProduct) {
+        name = nameProduct;
+        price = priceProduct;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
