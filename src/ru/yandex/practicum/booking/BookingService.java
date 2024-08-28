@@ -1,6 +1,6 @@
 package ru.yandex.practicum.booking;
 
-... // импортируйте классы BedAndBreakfast и Scanner
+import ru.yandex.practicum.model.BedAndBreakfast;... // импортируйте классы BedAndBreakfast и Scanner
 
 public class BookingService {
 
