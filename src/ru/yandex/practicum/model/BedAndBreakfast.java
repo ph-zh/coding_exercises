@@ -13,7 +13,7 @@ public class BedAndBreakfast { // сделайте класс общедосту
 
             boolean full = false; // сохраните в переменную full значение false - есть номера в наличии
 
-    void book() { // метод для бронирования комнат
+    public void book() { // метод для бронирования комнат
         if (!full) { // если есть свободные номера
             System.out.println("Забронирован ещё один номер!");
             capacity = capacity - 1; // уменьшите количество свободных номеров на один
@@ -26,11 +26,11 @@ public class BedAndBreakfast { // сделайте класс общедосту
         }
     }
 
-    void printRooms() {
+    public void printRooms() {
         System.out.println("Свободных номеров - " + ...);
     }
 
-    void free() { // метод для освобождения комнат
+    public void free() { // метод для освобождения комнат
         if (...) { // если свободных комнат меньше 10
             ... // увеличиваем количество свободных мест на одно
             System.out.println("Освободился номер!");
@@ -41,7 +41,7 @@ public class BedAndBreakfast { // сделайте класс общедосту
         }
     }
 
-    boolean isFull() {
+    public boolean isFull() {
         return full;
     }
 }
