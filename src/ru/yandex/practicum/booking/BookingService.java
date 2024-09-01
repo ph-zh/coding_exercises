@@ -1,3 +1,10 @@
+/*
+Напишите программу для бронирования комнаты с завтраком в мини-отеле “Royal Java Bed and Breakfast”. В нём 10 номеров.
+Реализуйте методы для заселения book() и выезда free() гостей. Расставьте нужные модификаторы доступа: переменные capacity (вместимость)
+и full (заполненность), а также метод printRooms() нужно скрыть — доступ к ним должен остаться только внутри класса BedAndBreakfast.
+Сам класс BedAndBreakfast и другие методы в нём должны иметь максимальный уровень доступа. Не забудьте, что когда вы закроете переменные,
+к ним нельзя будет обратиться — нужно будет обращаться к методам.
+ */
 package ru.yandex.practicum.booking;
 
 import ru.yandex.practicum.model.BedAndBreakfast; // импортируйте классы BedAndBreakfast и Scanner
@@ -33,7 +40,7 @@ public class BookingService {
                     hotel.free();
                     break;
                 case 3:
-                    if (hotel.full) {
+                    if (hotel.isFull()) {
                         System.out.println("Больше нет мест¯\\_(ツ)_/¯");
                     } else {
                         System.out.println("Есть свободные номера!");
