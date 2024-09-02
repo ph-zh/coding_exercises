@@ -1,46 +1,28 @@
-import java.util.Scanner;
+/*
+Вам нужно снять наличные в банкомате, но он сломался и выводит только консоль с недописанным кодом.
+По счастливой случайности — на Java. Допишите код — реализуйте методы в классе BankAccount.
+Чтобы установить и считать значение суммы денег на счёте moneyAmount, вам понадобятся get- и set-методы.
+Чтобы снять деньги со счёта и обнулить его — метод withdrawAll(), который должен обнулять счёт и
+печатать количество выданных денег в формате: Со счёта снято 1000 р. Все методы должны иметь самый широкий уровень
+доступа. В результате запуска программы в консоли должно появиться:
 
+- Количество денег на счету - 1000 р. (сумма может быть любой)
+- Со счёта снято 1000 р.
+- Количество денег на счету - 0 р.
+ */
 public class Main {
     public static void main(String[] args) {
-        Bank bank = new Bank();
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Сколько вы хотите положить на счёт?");
-        long money = scan.nextLong();
-        bank.setMoney(money);
-        System.out.println("На вашем счету " + bank.getMoney() + " руб.");
-        System.out.println("Комиссия составила " + bank.getCommission() + " руб.");
+        BankAccount bankAccount = new BankAccount();
+        ... // передайте в банкомат сумму на счету
+        System.out.println("Количество денег на счету - " + ... + " р.");
+        ... // вызовите метод вывода средств
+        System.out.println("Количество денег на счету - " + ... + " р.");
     }
 }
 
-class Bank {
-    private long money = 0;
-    private int commission = 100; // доступ к полю ограничен
+class BankAccount {
+    private long moneyAmount;
 
-    public long getMoney() {
-        return money;
-    }
-
-    public void setMoney(long newMoneyAmount) {
-        calculateCommission(newMoneyAmount); // усложняем логику
-        if (newMoneyAmount > 0 && newMoneyAmount > commission) {
-            money = newMoneyAmount - commission;
-        } else {
-            commission = 0;
-            System.out.println("Минимальная сумма - 51 рубль.");
-        }
-    }
-
-    // Добавляем get-метод - комиссию можно будет показать пользователю
-    public int getCommission() {
-        return commission;
-    }
-
-    private void calculateCommission(long newMoneyAmount) {
-        if (newMoneyAmount < 5000) {
-            commission = 50;
-        }
-        else {
-            commission = 100;
-        }
-    }
+    // допишите код методов
+    // используйте параметр newMoneyAmount для установки нового значения
 }
