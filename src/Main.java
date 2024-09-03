@@ -12,13 +12,17 @@
  */
 import java.util.Scanner;
 
-public class Practicum {
+public class Main {
     public static void main(String[] args) {
         BankAccount bankAccount = new BankAccount();
-        ... // передайте в банкомат сумму на счету
-        System.out.println("Количество денег на счету - " + ... + " р.");
-        ... // вызовите метод вывода средств
-        System.out.println("Количество денег на счету - " + ... + " р.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Сколько вы хотите положить на счёт?");
+        long moneyAmount = scanner.nextLong();
+        // передайте в банкомат сумму на счету
+        bankAccount.setMoneyAmount(moneyAmount);
+        System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
+        bankAccount.withdrawAll(); // вызовите метод вывода средств
+        System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
     }
 }
 
@@ -27,4 +31,19 @@ class BankAccount {
 
     // допишите код методов
     // используйте параметр newMoneyAmount для установки нового значения
+    public void setMoneyAmount(long newMoneyAmount) {
+        if (newMoneyAmount > 0) {
+            moneyAmount = newMoneyAmount;
+        }
+    }
+
+    public long getMoneyAmount() {
+        return moneyAmount;
+    }
+
+    public long withdrawAll() {
+        System.out.println("Со счёта снято " + moneyAmount + " р.");
+        moneyAmount = 0;
+        return moneyAmount;
+    }
 }
