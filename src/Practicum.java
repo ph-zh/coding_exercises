@@ -10,14 +10,10 @@
 - Со счёта снято 1000 р.
 - Количество денег на счету - 0 р.
  */
-import java.util.Scanner;
-
 public class Practicum {
     public static void main(String[] args) {
         BankAccount bankAccount = new BankAccount();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Сколько вы хотите положить на счёт?");
-        long moneyAmount = scanner.nextLong();
+        long moneyAmount = 1000;
         // передайте в банкомат сумму на счету
         bankAccount.setMoneyAmount(moneyAmount);
         System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
