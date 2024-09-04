@@ -1,45 +1,54 @@
 /*
-Вам нужно снять наличные в банкомате, но он сломался и выводит только консоль с недописанным кодом.
-По счастливой случайности — на Java. Допишите код — реализуйте методы в классе BankAccount.
-Чтобы установить и считать значение суммы денег на счёте moneyAmount, вам понадобятся get- и set-методы.
-Чтобы снять деньги со счёта и обнулить его — метод withdrawAll(), который должен обнулять счёт и
-печатать количество выданных денег в формате: Со счёта снято 1000 р. Все методы должны иметь самый широкий уровень
-доступа. В результате запуска программы в консоли должно появиться:
 
-- Количество денег на счету - 1000 р. (сумма может быть любой)
-- Со счёта снято 1000 р.
-- Количество денег на счету - 0 р.
  */
 public class Practicum {
     public static void main(String[] args) {
-        BankAccount bankAccount = new BankAccount();
-        long moneyAmount = 1000;
-        // передайте в банкомат сумму на счету
-        bankAccount.setMoneyAmount(moneyAmount);
-        System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
-        bankAccount.withdrawAll(); // вызовите метод вывода средств
-        System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
+        Fox foxAlica = new Fox();
+        System.out.println("Это лиса Алиса");
+        System.out.println("Цвет - " + foxAlica.color); // поле класса Fox
+        System.out.println("Вес - " + foxAlica.weight + " кг"); // конструктор Fox
+        System.out.println("Она дикая - " + foxAlica.isWild); // поле класса Animal
+        System.out.println("Хищник - " + foxAlica.isPredator); // поле класса Canidae
+        System.out.println("Она умеет говорить - " + foxAlica.say()); // метод класса Animal
+        System.out.println("И может зарычать " + foxAlica.growl()); // метод класса Canidae
     }
 }
 
-class BankAccount {
-    private long moneyAmount;
+class Animal {
+    protected double weight;
+    protected int age;
+    protected int heartRate;
+    protected boolean isWild;
 
-    // допишите код методов
-    // используйте параметр newMoneyAmount для установки нового значения
-
-    public long getMoneyAmount() {
-        return moneyAmount;
+    public Animal() {
+        weight = 0.0;
+        age = 0;
+        heartRate = 100;
+        isWild = true;
     }
 
-    public void setMoneyAmount(long newMoneyAmount) {
-        if (newMoneyAmount > 0) {
-            moneyAmount = newMoneyAmount;
-        }
+    public String say() {
+        return "Я животное!";
+    }
+}
+
+class Canidae extends Animal { // здесь происходит наследование
+    protected boolean isPredator;
+
+    public Canidae() {
+        isPredator = true;
     }
 
-    public void withdrawAll() {
-        System.out.println("Со счёта снято " + moneyAmount + " р.");
-        moneyAmount = 0;
+    public String growl() {
+        return "Р-р-р-р-р!";
+    }
+}
+
+class Fox extends Canidae { // здесь происходит наследование и Canidae, и Animal
+    protected String color;
+
+    public Fox() {
+        color = "рыжий";
+        weight = 2.0;
     }
 }
