@@ -5,9 +5,9 @@ class Coffee {
     protected double espresso;
     protected double milk;
 
-    public Coffee() {
-        espresso = 50.0;
-        milk = 250.0;
+    public Coffee(double newEspresso, double newMilk) { // конструктор суперкласса
+        espresso = newEspresso;
+        milk = newMilk;
     }
 
     public double mixAndGetVolume() {
@@ -17,11 +17,10 @@ class Coffee {
 
 class Cappuccino extends Coffee {
 
-    public double mixAndGetVolume() { // переопределили метод mixAndGetVolume()
-        double milkFoam = milk / 2;
-        return espresso + milkFoam + milk / 3;
+    public Cappuccino() {
+        //вызываем конструктор суперкласса
+        super(100.0, 250.0); // о ключевом слове super поговорим подробно чуть позже
     }
-
 }
 
 public class Practicum {
