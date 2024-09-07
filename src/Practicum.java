@@ -16,12 +16,17 @@ class Coffee {
 }
 
 class Cappuccino extends Coffee {
-    protected double espresso = 30.0;
+
+    public double mixAndGetVolume() { // переопределили метод mixAndGetVolume()
+        double milkFoam = milk / 2;
+        return espresso + milkFoam + milk / 3;
+    }
+
 }
 
 public class Practicum {
     public static void main(String[] args) {
         Cappuccino cappuccino = new Cappuccino();
-        System.out.println("Объём эспрессо - " + cappuccino.espresso);
+        System.out.println("Объём капучино - " + cappuccino.mixAndGetVolume());
     }
 }
