@@ -1,4 +1,6 @@
 /*
+После расширения с помощью extends в классе-наследнике можно делать следующее:
+Использовать унаследованные поля и методы напрямую.
  */
 class Coffee {
     protected double espresso;
@@ -15,18 +17,17 @@ class Coffee {
 }
 
 class Cappuccino extends Coffee {
-}
+    private double milkFoam; // добавили поле
 
-class Latte extends Coffee {
+    public double getMilkFoam() { // добавили метод
+        milkFoam = milk/2; // использовали переменную суперкласса
+        return milkFoam;
+    }
 }
 
 public class Practicum {
     public static void main(String[] args) {
         Cappuccino cappuccino = new Cappuccino();
-        // напрямую используем метод суперкласса:
-        System.out.println("Объём чашки капучино - " + cappuccino.mixAndGetVolume());
-        Latte latte = new Latte();
-        // напрямую используем переменную суперкласса:
-        System.out.println("Объём эспрессо в латте - " + latte.espresso);
+        System.out.println("Объём молочной пены - " + cappuccino.getMilkFoam());
     }
 }
