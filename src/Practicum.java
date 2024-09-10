@@ -1,5 +1,4 @@
 /*
-
  */
 class Coffee {
     protected double espresso;
