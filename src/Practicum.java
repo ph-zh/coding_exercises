@@ -1,31 +1,17 @@
 /*
 
  */
-class Coffee {
-    protected double espresso;
-    protected double milk;
+public class Teacher {
 
-    public Coffee(double newEspresso, double newMilk) { // конструктор суперкласса
-        espresso = newEspresso;
-        milk = newMilk;
-    }
-
-    public double mixAndGetVolume() {
-        return espresso + milk;
+    protected String startLesson() { // доступ ограничен классами-наследниками
+        return "Достаём учебники!";
     }
 }
 
-class Cappuccino extends Coffee {
+public class GeographyTeacher extends Teacher {
 
-    public Cappuccino() {
-        //вызываем конструктор суперкласса
-        super(100.0, 250.0); // о ключевом слове super поговорим подробно чуть позже
-    }
-}
-
-public class Practicum {
-    public static void main(String[] args) {
-        Cappuccino cappuccino = new Cappuccino();
-        System.out.println("Объём капучино - " + cappuccino.mixAndGetVolume());
+    @Override // аннотация
+    public String startLesson() { // доступ стал публичным
+        return "Достаём глобусы!"; // изменилось содержание
     }
 }
