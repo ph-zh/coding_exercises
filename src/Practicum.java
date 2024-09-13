@@ -1,26 +1,23 @@
 /*
-
+Исправьте метод playHamlet() так, чтобы исполнитель performer прочитал строчку из монолога Гамлета — «Быть иль не быть? Вот в чём вопрос?».
  */
-class Teacher {
+class Actor {
 
-    public String startLesson() {
-        return "Достаём учебники!";
+    void play() {
+        System.out.println("Гул затих. Я вышел на подмостки.");
     }
 }
 
-class GeographyTeacher extends Teacher {
+class Hamlet extends Actor {
 
-    @Override
-    public String startLesson() {
-        return "Достаём глобусы!";
+    void playHamlet() {
+        System.out.println("Быть или не быть? Вот в чём вопрос?");
     }
 }
 
-class Practicum {
+public class Practicum {
     public static void main(String[] args) {
-        // создали объект подкласса
-        GeographyTeacher teacher = new GeographyTeacher();
-        // вызываем метод подкласса
-        System.out.println("Урок начнётся с фразы : " + teacher.startLesson());
+        Hamlet performer = new Hamlet();
+        performer.play();
     }
 }
