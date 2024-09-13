@@ -9,8 +9,8 @@ class Actor {
 }
 
 class Hamlet extends Actor {
-
-    void playHamlet() {
+    @Override
+    void play() {
         System.out.println("Быть или не быть? Вот в чём вопрос?");
     }
 }
