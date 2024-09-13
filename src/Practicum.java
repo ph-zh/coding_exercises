@@ -1,17 +1,26 @@
 /*
 
  */
-public class Teacher {
+class Teacher {
 
-    protected String startLesson() { // доступ ограничен классами-наследниками
+    public String startLesson() {
         return "Достаём учебники!";
     }
 }
 
-public class GeographyTeacher extends Teacher {
+class GeographyTeacher extends Teacher {
 
-    @Override // аннотация
-    public String startLesson() { // доступ стал публичным
-        return "Достаём глобусы!"; // изменилось содержание
+    @Override
+    public String startLesson() {
+        return "Достаём глобусы!";
+    }
+}
+
+class Practicum {
+    public static void main(String[] args) {
+        // создали объект подкласса
+        GeographyTeacher teacher = new GeographyTeacher();
+        // вызываем метод подкласса
+        System.out.println("Урок начнётся с фразы : " + teacher.startLesson());
     }
 }
