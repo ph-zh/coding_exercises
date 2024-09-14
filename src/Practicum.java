@@ -24,7 +24,7 @@ public class Practicum {
         Cow cow = new Cow();
         Frog frog = new Frog();
         Elephant elephant = new Elephant();
-        Ducks ducks = new Ducks();
+        Duck duck = new Duck();
         Fish fish = new Fish();
         Seal seal = new Seal();
         // инициализируйте все нужные объекты
@@ -35,7 +35,7 @@ public class Practicum {
         System.out.println("Cow goes " + cow.say());
         System.out.println("Frog goes " + frog.say());
         System.out.println("And the elephant goes " + elephant.say());
-        System.out.println("Ducks say " + ducks.say());
+        System.out.println("Ducks say " + duck.say());
         System.out.println("And fish go " + fish.say());
         System.out.println("And the seal goes " + seal.say());
         // вызовите переопределённые методы

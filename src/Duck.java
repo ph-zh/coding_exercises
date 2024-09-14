@@ -1,4 +1,5 @@
-public class Ducks extends Animal {
+public class Duck extends Animal {
+    @Override
     public String say() {
         return "quack";
     }
