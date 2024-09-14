@@ -1,2 +1,5 @@
-public class Mouse {
+public class Mouse extends Animal {
+    public String say() {
+        return "squeek";
+    }
 }
