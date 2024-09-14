@@ -1,23 +1,23 @@
 /*
-Исправьте метод playHamlet() так, чтобы исполнитель performer прочитал строчку из монолога Гамлета — «Быть иль не быть? Вот в чём вопрос?».
- */
-class Actor {
 
-    void play() {
-        System.out.println("Гул затих. Я вышел на подмостки.");
+ */
+class Teacher {
+    public String getHomework(String lessonName) {
+        return "Читать пятый параграф!";
     }
 }
 
-class Hamlet extends Actor {
+class GeographyTeacher extends Teacher {
+    //ошибка компиляции
     @Override
-    void play() {
-        System.out.println("Быть или не быть? Вот в чём вопрос?");
+    public String getHomework() {
+        return "Выучить столицы всех стран.";
     }
 }
 
 public class Practicum {
     public static void main(String[] args) {
-        Hamlet performer = new Hamlet();
-        performer.play();
+        GeographyTeacher teacher = new GeographyTeacher();
+        System.out.println("Задание на дом: " + teacher.getHomework()); // тоже ошибка
     }
 }
