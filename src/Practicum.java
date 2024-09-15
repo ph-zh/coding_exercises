@@ -1,43 +1,92 @@
 /*
-В 2013 году норвежский дуэт братьев Илвисокеров Ylvis выпустил на YouTube вирусный клип “What Does the Fox Say?”
-(англ. «Что говорит лиса?») — к настоящему моменту его посмотрели более 1 млрд раз. Сюжет песни посвящен тому, что отлично известно,
-как говорят многие животные: собака — «гав», кошка — «мяу», корова — «му», а вот как говорит лиса — великая тайна. Немного передохните
-— послушайте песенку, а потом с помощью наследования и переопределения методов запрограммируйте её первый куплет:
-- Dog goes woof
-- Cat goes meow
-- Bird goes tweet
-- And mouse goes squeek
-- Cow goes moo
-- Frog goes croak
-- And the elephant goes toot
-- Ducks say quack
-- And fish go blub
-- And the seal goes ow ow ow
-Не забудьте использовать аннотацию @Override!
+Систему тестирования модели “Z” от “Tezla” доработали и убрали лишнее. Код теперь запускается, но есть проблема
+— результаты тестов не совпадают с ожидаемыми. Из-за технического сбоя файл Automobile оказался недоступен.
+Вносить изменения в класс Practicum также нельзя. Менять код можно только в файлах Tezla и ModelZ.
+Исправьте код таким образом, чтобы все тесты проходили успешно. Учитывайте, что сейчас метод accelerateByAutopilot()
+не учитывает максимальную скорость автопилота. Добавьте в него условие, чтобы ускорение происходило, только если скорость
+автомобиля меньше максимальной скорости автопилота. Если условие не выполняется, то значит, что скорость равна максимальной.
+Затем переопределите методы accelerate() и  brake().
+Итоговый вывод в консоли должен быть таким:
+- Характеристики модели:
+- Ускорение: 100.0 км/(ч*с)
+- Максимальная скорость: 300.0 км/ч
+
+- Начало теста!
+- Едем на автопилоте:
+- Скорость Z спустя 5с на автопилоте: 55.0 км/ч ✅
+- Скорость Z спустя ещё 5с на автопилоте: 60.0 км/ч ✅
+- Переходим в ручной режим:
+- Скорость Z спустя 2с в ручном режиме: 260.0 км/ч ✅
+- Скорость Z спустя ещё 2с в ручном режиме: 300.0 км/ч ✅
+- Проверяем торможение:
+- Время торможения до полной остановки: 3c ✅
+- Скорость Z: 0.0 км/ч ✅
  */
-public class Practicum {
+package yandex.practicum.auto;
+
+class Practicum {
     public static void main(String[] args) {
-        Dog dog = new Dog();
-        Cat cat = new Cat();
-        Bird bird = new Bird();
-        Mouse mouse = new Mouse();
-        Cow cow = new Cow();
-        Frog frog = new Frog();
-        Elephant elephant = new Elephant();
-        Duck duck = new Duck();
-        Fish fish = new Fish();
-        Seal seal = new Seal();
-        // инициализируйте все нужные объекты
-        System.out.println("Dog goes " + dog.say());
-        System.out.println("Cat goes " + cat.say());
-        System.out.println("Bird goes " + bird.say());
-        System.out.println("And mouse goes " + mouse.say());
-        System.out.println("Cow goes " + cow.say());
-        System.out.println("Frog goes " + frog.say());
-        System.out.println("And the elephant goes " + elephant.say());
-        System.out.println("Ducks say " + duck.say());
-        System.out.println("And fish go " + fish.say());
-        System.out.println("And the seal goes " + seal.say());
-        // вызовите переопределённые методы
+        ModelZ testCar = new ModelZ();
+
+        System.out.println("Характеристики модели:");
+        System.out.println("Ускорение: " + testCar.acceleration + " км/(ч*с)");
+        System.out.println("Максимальная скорость: " + testCar.maxSpeed + " км/ч");
+
+        System.out.println("\nНачало теста!");
+
+        System.out.println("Едем на автопилоте:");
+        for (int second = 0; second < 5; second++) {
+            testCar.accelerateByAutopilot();
+        }
+        System.out.print("Скорость Z спустя 5с на автопилоте: " + testCar.speed + " км/ч");
+        checkResult(55.0, testCar.speed);
+
+        for (int second = 0; second < 5; second++) {
+            testCar.accelerateByAutopilot();
+        }
+        System.out.print("Скорость Z спустя ещё 5с на автопилоте: " + testCar.speed + " км/ч");
+        checkResult(60.0, testCar.speed);
+
+
+        System.out.println("Переходим в ручной режим:");
+        for (int second = 0; second < 2; second++) {
+            testCar.accelerate();
+        }
+        System.out.print("Скорость Z спустя 2с в ручном режиме: " + testCar.speed + " км/ч");
+        checkResult(260.0, testCar.speed);
+
+        for (int second = 0; second < 2; second++) {
+            testCar.accelerate();
+        }
+        System.out.print("Скорость Z спустя ещё 2с в ручном режиме: " + testCar.speed + " км/ч");
+        checkResult(300.0, testCar.speed);
+
+
+        System.out.println("Проверяем торможение:");
+        int brakingTime = 0;
+        while (testCar.speed > 0) {
+            testCar.brake();
+            brakingTime++;
+        }
+        System.out.print("Время торможения до полной остановки: " + brakingTime + "c");
+        checkResult(3, brakingTime);
+        System.out.print("Скорость Z: " + testCar.speed + " км/ч");
+        checkResult(0.0, testCar.speed);
+    }
+
+    private static void checkResult(double expect, double actual) {
+        if (expect == actual) {
+            System.out.println(" ✅");
+        } else {
+            System.out.println(" ❌");
+        }
+    }
+
+    private static void checkResult(int expect, int actual) {
+        if (expect == actual) {
+            System.out.println(" ✅");
+        } else {
+            System.out.println(" ❌");
+        }
     }
 }
