@@ -29,6 +29,8 @@ class Tezla extends Automobile {
     public void accelerate() {
         if (speed < maxSpeed) {
             speed += acceleration;
+        } else {
+            speed = maxSpeed;
         }
     }
 
