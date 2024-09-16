@@ -7,7 +7,6 @@ class Automobile {
     protected double acceleration;
     protected double brakingSpeed;
 
-
     public Automobile() {
         acceleration = 30;
         brakingSpeed = 120;
