@@ -7,5 +7,6 @@ class ModelZ extends Tezla {
         speed = 0;
         maxSpeed = 300;
         acceleration = 100;
+        brakingSpeed = 100;
     }
 }
