@@ -1,25 +1,27 @@
 /*
-task
+
  */
 
 class Teacher {
-    int numberOfLessons = 34; // поле класса-родителя скрыто
+
+    public void startLesson() {
+        System.out.println("Звонок для кого прозвенел?!");
+    }
 }
 
 class GymTeacher extends Teacher {
-    int numberOfLessons = 3;
 
-    public void printSchedule() {
-        // печатаем значение поля суперкласса
-        System.out.println("Число уроков в неделю - " + super.numberOfLessons);
-        // печатаем значение поля подкласса
-        System.out.println("Число уроков физкультуры - " + numberOfLessons);
+    @Override
+    public void startLesson() {
+        super.startLesson(); //вызов метода класса-родителя
+        System.out.println("Стройтесь по росту!");
     }
 }
 
 public class Practicum {
     public static void main(String[] args) {
         GymTeacher teacher = new GymTeacher();
-        teacher.printSchedule();
+        System.out.println("Учитель физкультуры говорит:");
+        teacher.startLesson();
     }
 }
