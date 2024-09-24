@@ -1,5 +1,5 @@
 /*
-
+task
  */
 
 class Teacher {
@@ -8,7 +8,7 @@ class Teacher {
 
     public Teacher() {
         numberOfPupils = 30;
-        workLoad = 22;
+        workLoad = 23;
     }
 }
 
