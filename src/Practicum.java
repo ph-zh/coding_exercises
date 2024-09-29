@@ -1,5 +1,4 @@
 /*
-
  */
 
 class Teacher {
@@ -26,6 +25,6 @@ public class Practicum {
         BiologyTeacher teacher = new BiologyTeacher();
         System.out.println("Число учеников на уроке биологии - " + teacher.numberOfPupils);
         System.out.println("Рабочая нагрузка " + teacher.workLoad + " часов в месяц");
-        System.out.println("Количество лабораторных работ - " + teacher.numberOfLabs);
+        System.out.println("Количество 2 лабораторных работ - " + teacher.numberOfLabs);
     }
 }
