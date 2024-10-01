@@ -3,29 +3,25 @@
  */
 
 class Teacher {
-    int numberOfPupils; // число учеников в классе
-    double workLoad; // нагрузка учителя
 
-    public Teacher() {
-        numberOfPupils = 30;
-        workLoad = 23;
+    public void startLesson() {
+        System.out.println("Звонок для кого прозвенел?!");
     }
 }
 
-class BiologyTeacher extends Teacher {
-    int numberOfLabs; // число лабораторных работ
+class GymTeacher extends Teacher {
 
-    public BiologyTeacher() {
-        super(); // здесь явно вызван конструктор суперкласса
-        numberOfLabs = 10;
+    @Override
+    public void startLesson() {
+        super.startLesson(); //вызов метода класса-родителя
+        System.out.println("Стройтесь по росту!");
     }
 }
 
 public class Practicum {
     public static void main(String[] args) {
-        BiologyTeacher teacher = new BiologyTeacher();
-        System.out.println("Число учеников на уроке биологии - " + teacher.numberOfPupils);
-        System.out.println("Рабочая нагрузка " + teacher.workLoad + " часов в месяц");
-        System.out.println("Количество лабораторных работ - " + teacher.numberOfLabs);
+        GymTeacher teacher = new GymTeacher();
+        System.out.println("Учитель физкультуры говорит:");
+        teacher.startLesson();
     }
 }
