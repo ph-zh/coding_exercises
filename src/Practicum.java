@@ -16,7 +16,7 @@ class BiologyTeacher extends Teacher {
     int numberOfLabs; // число лабораторных работ
 
     public BiologyTeacher() {
-        // здесь неявно вызван конструктор суперкласса
+        super(); // здесь явно вызван конструктор суперкласса
         numberOfLabs = 10;
     }
 }
