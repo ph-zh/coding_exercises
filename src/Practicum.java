@@ -3,23 +3,29 @@
  */
 
 class Teacher {
-    int numberOfLessons = 34; // поле класса-родителя скрыто
+    int numberOfPupils; // число учеников в классе
+    double workLoad; // нагрузка учителя
+
+    public Teacher() {
+        numberOfPupils = 30;
+        workLoad = 22;
+    }
 }
 
-class GymTeacher extends Teacher {
-    int numberOfLessons = 3;
+class BiologyTeacher extends Teacher {
+    int numberOfLabs; // число лабораторных работ
 
-    public void printSchedule() {
-        // печатаем значение поля суперкласса
-        System.out.println("Число уроков в неделю - " + super.numberOfLessons);
-        // печатаем значение поля подкласса
-        System.out.println("Число уроков физкультуры - " + numberOfLessons);
+    public BiologyTeacher() {
+        // здесь неявно вызван конструктор суперкласса
+        numberOfLabs = 10;
     }
 }
 
 public class Practicum {
     public static void main(String[] args) {
-        GymTeacher teacher = new GymTeacher();
-        teacher.printSchedule();
+        BiologyTeacher teacher = new BiologyTeacher();
+        System.out.println("Число учеников на уроке биологии - " + teacher.numberOfPupils);
+        System.out.println("Рабочая нагрузка " + teacher.workLoad + " часов в месяц");
+        System.out.println("Количество лабораторных работ - " + teacher.numberOfLabs);
     }
 }
