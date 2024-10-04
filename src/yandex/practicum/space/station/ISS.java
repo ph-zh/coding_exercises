@@ -1,6 +1,6 @@
 package yandex.practicum.space.station;
 
-class ISS extends Zarya {
+class ISS extends Mir {
     // доступ к изменению параметров запрещён
     public ISS(double initialOxygenLevel, double initialEnergyLevel, double initialFuel) {
 
@@ -22,13 +22,10 @@ class ISS extends Zarya {
     }
 
     // получен доступ к переопределению метода стабилизации
-    @Override
-    void stabilize() {
-        stabilizeBySmallEngines();
-    }
+
     // доступ к изменению метода запрещён
     private void connectOxygenCableTo(Zvezda module) {
-        double oxygenLosses = (oxygenLevel + module.oxygenLevel) / 2 + 9;
+        double oxygenLosses = (oxygenLevel + module.oxygenLevel) / 2 + 9; //14
         oxygenLevel -= oxygenLosses;
         vibration += 2;
     }
