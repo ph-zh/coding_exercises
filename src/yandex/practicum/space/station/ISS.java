@@ -25,15 +25,15 @@ class ISS extends Mir {
 
     // доступ к изменению метода запрещён
     private void connectOxygenCableTo(Zvezda module) {
-        double oxygenLosses = (oxygenLevel + module.oxygenLevel) / 2 + 9; //14
-        oxygenLevel -= oxygenLosses;
+        double oxygenLosses = (oxygenLevel + module.oxygenLevel) / 2 + 9; //(0 + 10) / 2 + 9
+        oxygenLevel -= oxygenLosses; // 10 - 14 = -4
         vibration += 2;
     }
 
     // доступ к изменению метода запрещён
     private void connectEnergyCableTo(Zvezda module) {
-        energyReserve += module.getEnergyReserve();
-        energyConsumption += module.getEnergyConsumption() * 1.3;
+        energyReserve += module.getEnergyReserve(); // 50 from Mir class through get method from Mir field
+        energyConsumption += module.getEnergyConsumption() * 1.3; // 20 + (44 * 1.3 = 57.2) = 77.2
         vibration += 2;
     }
 }
