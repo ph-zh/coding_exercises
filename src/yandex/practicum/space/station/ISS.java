@@ -32,7 +32,7 @@ class ISS extends Mir {
 
     // доступ к изменению метода запрещён
     private void connectEnergyCableTo(Zvezda module) {
-        energyReserve += module.getEnergyReserve(); // value 50 from Mir class through get method from Mir field
+        energyReserve += module.getEnergyReserve(); // value 50 from Mir class through get method from Mir field added
         energyConsumption += module.getEnergyConsumption() * 1.3; // 20 + (44 * 1.3 = 57.2) = 77.2
         vibration += 2;
     }
