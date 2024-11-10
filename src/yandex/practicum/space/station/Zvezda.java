@@ -10,9 +10,4 @@ class Zvezda extends Zarya {
     // доступ к созданию новых конструкторов запрещён
 
     // разрешено переопределение методов
-    @Override
-    void turnSolarPanels() {
-        System.out.println("Поворот солнечных панелей для накопления энергии...");
-        energyReserve += 15;
-    }
 }
